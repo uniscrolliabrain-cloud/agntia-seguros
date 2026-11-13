@@ -1,0 +1,63 @@
+{
+  "observed_on": "2026-11-13",
+  "reference_is_production_pin": false,
+  "repositories": [
+    {
+      "repository": "openimis/openimis-be_py",
+      "reference_sha": "8132099903430b5d8abc4ac5e53d6fdf719e080a",
+      "branch": "develop",
+      "metadata_license": "NOASSERTION",
+      "read_path": "README.md",
+      "read_blob_sha": "f2ba3f5b884756172f328b4df1b9b8df4b1bfa0a",
+      "scope": "Metadata and first90–100 README lines; not code audit/install/runtime verification",
+      "license_review": {
+        "path": "LICENSE.md",
+        "blob_sha": "fec6d6918388be47a36c80ad75c38d5f21eeff54",
+        "scope": "Selective source/license read, no complete dependencies/models/edition legal review"
+      },
+      "runtime_verified": false
+    },
+    {
+      "repository": "openimis/openimis-fe_js",
+      "reference_sha": "8146bb2e5e48da90dbff450294f312fa665d878b",
+      "branch": "develop",
+      "metadata_license": "NOASSERTION",
+      "read_path": "README.md",
+      "read_blob_sha": "80e27ce13dc768dd936041b501303bc8bcfa0daa",
+      "scope": "Metadata and first90–100 README lines; not code audit/install/runtime verification",
+      "license_review": {
+        "path": "LICENSE.md",
+        "blob_sha": "fec6d6918388be47a36c80ad75c38d5f21eeff54",
+        "scope": "Selective source/license read, no complete dependencies/models/edition legal review"
+      },
+      "runtime_verified": false
+    },
+    {
+      "repository": "OasisLMF/OasisLMF",
+      "reference_sha": "b2e63308c7da2024f32d90992098a285e1e77729",
+      "branch": "main",
+      "metadata_license": "BSD-3-Clause",
+      "read_path": "README.md",
+      "read_blob_sha": "125a2733d6f5eca23307bd938feb7a31bbcf9f70",
+      "scope": "Metadata and first90–100 README lines; not code audit/install/runtime verification",
+      "license_review": null,
+      "runtime_verified": false
+    },
+    {
+      "repository": "finos/common-domain-model",
+      "reference_sha": "037e7e96db965e27ac590c284fcec3528c8fa678",
+      "branch": "master",
+      "metadata_license": "NOASSERTION",
+      "read_path": "README.md",
+      "read_blob_sha": "550d16a8341d6f5c9b949bf3a3ae8c58da97f88a",
+      "scope": "Metadata and first90–100 README lines; not code audit/install/runtime verification",
+      "license_review": {
+        "path": "LICENSE.md",
+        "blob_sha": "98dd7dbca3ed56486660567b60bbe9b59c72bcba",
+        "scope": "Selective source/license read, no complete dependencies/models/edition legal review"
+      },
+      "runtime_verified": false
+    }
+  ],
+  "license_notes": "openIMIS backend/frontend declaran AGPLv3 en LICENSE.md, con dependencias/módulos a revisar; son referencia de financiación sanitaria y no equivalen a correduría multirramo española. OasisLMF BSD-3-Clause es modelado de catástrofes con datos/modelos separados, no tarificador universal. FINOS CDM tiene licencia Community Specification y ámbito financiero; se evalúa como referencia de contratos, no se instala como motor de seguros."
+}

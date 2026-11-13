@@ -1,0 +1,226 @@
+{
+  "observed_on": "2026-11-13",
+  "method": "Selective primary-source abstracts/official docs/vendor announcements and pinned repository metadata/README/license reads; no runtime or benchmarks",
+  "sources": [
+    {
+      "id": "H01",
+      "type": "parent_code",
+      "title": "agente: contratos inspeccionados por SHA",
+      "url": "https://github.com/uniscrolliabrain-cloud/agente/tree/54b8d5407a8576459448c4d059a877297d18ca7a",
+      "observed_on": "2026-11-13",
+      "scope": "Mapa heredado de31archivos más6nuevas lecturas selectivas. Main cotejado13noviembre; no auditoría exhaustiva, tests o cambios.",
+      "access_status": "OBSERVED_CODE",
+      "runtime_verified": false,
+      "benchmark_reproduced": false
+    },
+    {
+      "id": "P01",
+      "type": "paper",
+      "title": "InsClaimBench",
+      "url": "https://arxiv.org/abs/2610.09671",
+      "observed_on": "2026-11-13",
+      "scope": "Abstract/versiones disponibles consultados, no reproducción; inferencia de diseño: Evaluar reglas, módulos, decisión e importe conjuntamente; variantes de hechos deben propagarse coherentemente.",
+      "access_status": "SELECTIVE_READ",
+      "runtime_verified": false,
+      "benchmark_reproduced": false
+    },
+    {
+      "id": "P02",
+      "type": "paper",
+      "title": "UNDERWRITE",
+      "url": "https://arxiv.org/abs/2602.00456",
+      "observed_on": "2026-11-13",
+      "scope": "Abstract/versiones disponibles consultados, no reproducción; inferencia de diseño: Expertos, interfaces ruidosas y conocimiento de producto importan; eficiencia/confianza no igualan corrección de suscripción.",
+      "access_status": "SELECTIVE_READ",
+      "runtime_verified": false,
+      "benchmark_reproduced": false
+    },
+    {
+      "id": "P03",
+      "type": "paper",
+      "title": "Underwriting the Agent Economy",
+      "url": "https://arxiv.org/abs/2607.11999",
+      "observed_on": "2026-11-13",
+      "scope": "Abstract/versiones disponibles consultados, no reproducción; inferencia de diseño: Marco conceptual de riesgo de agentes, no tabla actuarial validada ni cobertura afirmativa garantizada para clientes.",
+      "access_status": "SELECTIVE_READ",
+      "runtime_verified": false,
+      "benchmark_reproduced": false
+    },
+    {
+      "id": "V01",
+      "type": "vendor_primary",
+      "title": "Guidewire",
+      "url": "https://www.guidewire.com/products/technology/insurance-ai-from-guidewire",
+      "observed_on": "2026-11-13",
+      "scope": "Patrón de policy/claims/billing y agentes contextualizados; no acceso o licencia Community asumidos. Fuente comercial/regulatoria selectiva, no prueba de producto; no heredar certificaciones/precios.",
+      "access_status": "DOCUMENTED_NOT_TESTED",
+      "runtime_verified": false,
+      "benchmark_reproduced": false
+    },
+    {
+      "id": "V02",
+      "type": "vendor_primary",
+      "title": "EIOPA",
+      "url": "https://www.eiopa.europa.eu/publications/opinion-artificial-intelligence-governance-and-risk-management_en",
+      "observed_on": "2026-11-13",
+      "scope": "Opinión de gobernanza/riesgo de IA consultada: proporcionalidad y controles contextualizados, no licencia del servicio. Fuente comercial/regulatoria selectiva, no prueba de producto; no heredar certificaciones/precios.",
+      "access_status": "DOCUMENTED_NOT_TESTED",
+      "runtime_verified": false,
+      "benchmark_reproduced": false
+    },
+    {
+      "id": "V03",
+      "type": "vendor_primary",
+      "title": "Duck Creek",
+      "url": "https://www.duckcreek.com/product/duck-creek-intelligence/",
+      "observed_on": "2026-11-13",
+      "scope": "Plataforma agéntica de seguro como referencia; API/contrato/capacidades reales pendientes. Fuente comercial/regulatoria selectiva, no prueba de producto; no heredar certificaciones/precios.",
+      "access_status": "DOCUMENTED_NOT_TESTED",
+      "runtime_verified": false,
+      "benchmark_reproduced": false
+    },
+    {
+      "id": "S01",
+      "type": "security_or_law_primary",
+      "title": "Supabase JWT",
+      "url": "https://supabase.com/docs/guides/auth/jwts",
+      "observed_on": "2026-11-13",
+      "scope": "Verificación/claims/JWKS; sin tokens de usuarios reales.",
+      "access_status": "DOCUMENTED_NOT_TESTED",
+      "runtime_verified": false,
+      "benchmark_reproduced": false
+    },
+    {
+      "id": "S02",
+      "type": "security_or_law_primary",
+      "title": "Supabase RLS",
+      "url": "https://supabase.com/docs/guides/database/postgres/row-level-security",
+      "observed_on": "2026-11-13",
+      "scope": "Scope de SQL y user_metadata editable; sin DB configurada.",
+      "access_status": "DOCUMENTED_NOT_TESTED",
+      "runtime_verified": false,
+      "benchmark_reproduced": false
+    },
+    {
+      "id": "N01",
+      "type": "security_or_law_primary",
+      "title": "Anam overview",
+      "url": "https://anam.ai/docs/introduction/overview",
+      "observed_on": "2026-11-13",
+      "scope": "Presencia para agente existente y pipeline; sin sesión/plan/API test.",
+      "access_status": "DOCUMENTED_NOT_TESTED",
+      "runtime_verified": false,
+      "benchmark_reproduced": false
+    },
+    {
+      "id": "L01",
+      "type": "security_or_law_primary",
+      "title": "RGPD",
+      "url": "https://eur-lex.europa.eu/eli/reg/2016/679/oj",
+      "observed_on": "2026-11-13",
+      "scope": "Consulta selectiva, no dictamen universal.",
+      "access_status": "DOCUMENTED_NOT_TESTED",
+      "runtime_verified": false,
+      "benchmark_reproduced": false
+    },
+    {
+      "id": "L02",
+      "type": "security_or_law_primary",
+      "title": "AI Act",
+      "url": "https://eur-lex.europa.eu/eli/reg/2024/1689/oj",
+      "observed_on": "2026-11-13",
+      "scope": "Uso/rol/fechas/clasificación a revalidar para implementación.",
+      "access_status": "DOCUMENTED_NOT_TESTED",
+      "runtime_verified": false,
+      "benchmark_reproduced": false
+    },
+    {
+      "id": "L03",
+      "type": "security_or_law_primary",
+      "title": "LSSI",
+      "url": "https://www.boe.es/buscar/act.php?id=BOE-A-2002-13758",
+      "observed_on": "2026-11-13",
+      "scope": "Comunicaciones/propósito y oposición según caso, revisión humana.",
+      "access_status": "DOCUMENTED_NOT_TESTED",
+      "runtime_verified": false,
+      "benchmark_reproduced": false
+    },
+    {
+      "id": "D01",
+      "type": "domain_primary",
+      "title": "Distribución seguros",
+      "url": "https://www.boe.es/eli/es/rdl/2020/02/04/3/con",
+      "observed_on": "2026-11-13",
+      "scope": "Analizar actividad concreta, cualificación/registro/responsabilidad y contrato antes de operar; la etiqueta software no elimina requisitos.",
+      "access_status": "SELECTIVE_READ",
+      "runtime_verified": false,
+      "benchmark_reproduced": false
+    },
+    {
+      "id": "D02",
+      "type": "domain_primary",
+      "title": "Contrato seguro",
+      "url": "https://www.boe.es/buscar/act.php?id=BOE-A-1980-22501",
+      "observed_on": "2026-11-13",
+      "scope": "Interpretación de póliza, comunicaciones y plazos requieren contexto, documentos y profesional competente.",
+      "access_status": "SELECTIVE_READ",
+      "runtime_verified": false,
+      "benchmark_reproduced": false
+    },
+    {
+      "id": "D03",
+      "type": "domain_primary",
+      "title": "EIOPA AI",
+      "url": "https://www.eiopa.europa.eu/publications/opinion-artificial-intelligence-governance-and-risk-management_en",
+      "observed_on": "2026-11-13",
+      "scope": "Gobernanza, documentación y supervisión según uso/rol; no convierte modelo en decisor autorizado.",
+      "access_status": "SELECTIVE_READ",
+      "runtime_verified": false,
+      "benchmark_reproduced": false
+    },
+    {
+      "id": "R01",
+      "type": "repository",
+      "title": "openimis/openimis-be_py",
+      "url": "https://github.com/openimis/openimis-be_py/tree/8132099903430b5d8abc4ac5e53d6fdf719e080a",
+      "observed_on": "2026-11-13",
+      "scope": "Metadatos y README selectivos por SHA; ver repositories.json; rama por defecto no es release aprobada.",
+      "access_status": "OBSERVED_REPOSITORY",
+      "runtime_verified": false,
+      "benchmark_reproduced": false
+    },
+    {
+      "id": "R02",
+      "type": "repository",
+      "title": "openimis/openimis-fe_js",
+      "url": "https://github.com/openimis/openimis-fe_js/tree/8146bb2e5e48da90dbff450294f312fa665d878b",
+      "observed_on": "2026-11-13",
+      "scope": "Metadatos y README selectivos por SHA; ver repositories.json; rama por defecto no es release aprobada.",
+      "access_status": "OBSERVED_REPOSITORY",
+      "runtime_verified": false,
+      "benchmark_reproduced": false
+    },
+    {
+      "id": "R03",
+      "type": "repository",
+      "title": "OasisLMF/OasisLMF",
+      "url": "https://github.com/OasisLMF/OasisLMF/tree/b2e63308c7da2024f32d90992098a285e1e77729",
+      "observed_on": "2026-11-13",
+      "scope": "Metadatos y README selectivos por SHA; ver repositories.json; rama por defecto no es release aprobada.",
+      "access_status": "OBSERVED_REPOSITORY",
+      "runtime_verified": false,
+      "benchmark_reproduced": false
+    },
+    {
+      "id": "R04",
+      "type": "repository",
+      "title": "finos/common-domain-model",
+      "url": "https://github.com/finos/common-domain-model/tree/037e7e96db965e27ac590c284fcec3528c8fa678",
+      "observed_on": "2026-11-13",
+      "scope": "Metadatos y README selectivos por SHA; ver repositories.json; rama por defecto no es release aprobada.",
+      "access_status": "OBSERVED_REPOSITORY",
+      "runtime_verified": false,
+      "benchmark_reproduced": false
+    }
+  ]
+}
