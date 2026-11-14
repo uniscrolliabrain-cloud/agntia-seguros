@@ -1,0 +1,5 @@
+# Contratos y fronteras — Seguros
+
+Fuentes: `docs/contracts/01-contratos.md`, `docs/architecture/01-arquitectura.md`, `docs/architecture/02-identidad-twins.md`, `docs/architecture/03-compatibilidad-agente.md`, `docs/architecture/04-runtime.md`.
+
+JWT+membresía, actor originTenant/targetTenant, twin bajo mandato y ACL cliente/póliza/siniestro. RegulatedRole/Representation/NeedsAndDemands, PolicyProjection con póliza original, condiciones particulares/generales, endosos, fechas y evidencia de cláusula; unknown cuando falte. QuoteComparison solo entre ofertas acreditadas y campos homogéneos; RuleEvaluation versionada y no vinculante. Estimate Decimal/currency y franquicia ilustrativa; no indemnización oficial. ClaimEvidence con provenance, operador externo responsable de decisiones adversas y binding, receipt verificable. Plazos y reclamaciones según jurisdicción, entidad y revisión competente. Datos de salud/sensibles minimizados y sin inferencias decisionales no autorizadas. No confundir prueba mock con integración real.
