@@ -1,0 +1,3 @@
+# Estado real — Agntia Seguros
+
+Inspección GitHub main 2026-11-14: 76 entradas, documentación, investigación, arquitectura, contratos, manifest y runbooks; no app ni tests de implementación. Rama previa `docs/factory-prep-v1-20261113` contiene factory y plantillas; **esta rama de ejecución deriva de main**, que ya tiene las 42 campañas originales. 294 tareas/84 gates NOT_STARTED/NOT_EXECUTED. SHA padre referenciado es histórico, cotejar con HEAD al ejecutar. Rutas de código propuestas, no código existente. Congelar SHAs, rol regulado, capacidad del operador y pólizas/fuentes antes de implementar.
