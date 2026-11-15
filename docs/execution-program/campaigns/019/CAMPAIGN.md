@@ -12,8 +12,8 @@ Construir/verificar motor de reglas ilustrativo para Operaciones y asistencia pr
 - DTO Zod: `packages/contracts/src/19.ts` si corresponde.
 - API Hono: `apps/api/src/routes/19.ts` solo si operación autorizada.
 - Tests: `tests/campaigns/019.test.ts`, fixtures `tests/fixtures/019/`.
-- Artefactos originales: `docs/implementation/c19/README.md`, `docs/implementation/c19/EVIDENCE.md`, `docs/implementation/c19/TESTS.md`, `docs/implementation/c19/RISKS.md`.
-- Reporte de Freebuff en este CAMPAIGN.md; evidencia extendida en docs/implementation/c19/.
+- Artefactos originales: `docs/implementation/19-motor-de-reglas-ilustrativo/README.md`, `docs/implementation/19-motor-de-reglas-ilustrativo/EVIDENCE.md`, `docs/implementation/19-motor-de-reglas-ilustrativo/TESTS.md`, `docs/implementation/19-motor-de-reglas-ilustrativo/RISKS.md`.
+- Reporte de Freebuff en este CAMPAIGN.md; evidencia extendida en docs/implementation/19-motor-de-reglas-ilustrativo/.
 
 ## Patchsets secuenciales
 ### 019.01 — SEG-C19-T01: Congelar fuentes, ámbito y autoridad
@@ -92,4 +92,9 @@ JWT Supabase+membresía → actor/twin+tenant y mandato → ACL cliente/póliza/
 **Rollback:** Deshabilitar capacidad o flag y detener efectos nuevos; conservar audit, links, intents, snapshots y receipts. Restore probado con restricciones/supresiones reaplicadas; no borrar efectos remotos para fingir reversión.
 
 ## Reporte Freebuff — completar al terminar
-Estado: PENDING. SHA: PENDING. Archivos/diff: PENDING. Tests/fixtures: PENDING. Gates: PENDING. Incoherencias/decisiones: PENDING. Riesgos/deuda: PENDING. Aprendizajes para próximas campañas: PENDING. Continuar autónomamente; Codex audita después de C42.
+Estado: PASS (unitario). SHA inicial: d92af6f (main congelado). Archivos: market.ts (evaluateRules).
+Tests/fixtures: 2 tests
+Gates: G01 PASS: variante factual cambia reglas coherentemente
+Incoherencias/decisiones: Hecho ausente -> unknown, nunca false; composicion versionada.
+Riesgos/deuda: sin auditoria Codex; contratos pueden cambiar tras Astra.
+Aprendizajes: documentar el limite no basta; el codigo debe impedir el atajo.

@@ -12,8 +12,8 @@ Construir/verificar supabase jwt y principal para Operaciones y asistencia profe
 - DTO Zod: `packages/contracts/src/03.ts` si corresponde.
 - API Hono: `apps/api/src/routes/03.ts` solo si operación autorizada.
 - Tests: `tests/campaigns/003.test.ts`, fixtures `tests/fixtures/003/`.
-- Artefactos originales: `docs/implementation/c03/README.md`, `docs/implementation/c03/EVIDENCE.md`, `docs/implementation/c03/TESTS.md`, `docs/implementation/c03/RISKS.md`.
-- Reporte de Freebuff en este CAMPAIGN.md; evidencia extendida en docs/implementation/c03/.
+- Artefactos originales: `docs/implementation/03-supabase-jwt-y-principal/README.md`, `docs/implementation/03-supabase-jwt-y-principal/EVIDENCE.md`, `docs/implementation/03-supabase-jwt-y-principal/TESTS.md`, `docs/implementation/03-supabase-jwt-y-principal/RISKS.md`.
+- Reporte de Freebuff en este CAMPAIGN.md; evidencia extendida en docs/implementation/03-supabase-jwt-y-principal/.
 
 ## Patchsets secuenciales
 ### 003.01 — SEG-C03-T01: Congelar fuentes, ámbito y autoridad
@@ -92,4 +92,9 @@ JWT Supabase+membresía → actor/twin+tenant y mandato → ACL cliente/póliza/
 **Rollback:** Deshabilitar capacidad o flag y detener efectos nuevos; conservar audit, links, intents, snapshots y receipts. Restore probado con restricciones/supresiones reaplicadas; no borrar efectos remotos para fingir reversión.
 
 ## Reporte Freebuff — completar al terminar
-Estado: PENDING. SHA: PENDING. Archivos/diff: PENDING. Tests/fixtures: PENDING. Gates: PENDING. Incoherencias/decisiones: PENDING. Riesgos/deuda: PENDING. Aprendizajes para próximas campañas: PENDING. Continuar autónomamente; Codex audita después de C42.
+Estado: PASS (unitario). SHA inicial: d92af6f (main congelado). Archivos: apps/api/src/principal.ts, apps/api/src/auth.test.ts.
+Tests/fixtures: 12 tests JWT: firma, issuer, audience, exp, alg HS256, tenant firmado, user_metadata ignorado, membresia suspendida, sin fallback.
+Gates: G01 PASS (token de A contra recursos de B y variantes). G02 PASS (fail-closed antes de leer). Supabase real: NOT_VERIFIED.
+Incoherencias/decisiones: JWKS remoto no probado contra proyecto real; resolver de membresia es Postgres (pendiente C06).
+Riesgos/deuda: sin auditoria Codex; contratos pueden cambiar tras Astra.
+Aprendizajes: el envelope no es prueba de identidad; el ACL va al recurso real, no al operationId.

@@ -12,8 +12,8 @@ Construir/verificar privacidad y pruebas adversariales para Operaciones y asiste
 - DTO Zod: `packages/contracts/src/39.ts` si corresponde.
 - API Hono: `apps/api/src/routes/39.ts` solo si operación autorizada.
 - Tests: `tests/campaigns/039.test.ts`, fixtures `tests/fixtures/039/`.
-- Artefactos originales: `docs/implementation/c39/README.md`, `docs/implementation/c39/EVIDENCE.md`, `docs/implementation/c39/TESTS.md`, `docs/implementation/c39/RISKS.md`.
-- Reporte de Freebuff en este CAMPAIGN.md; evidencia extendida en docs/implementation/c39/.
+- Artefactos originales: `docs/implementation/39-privacidad-y-pruebas-adversariales/README.md`, `docs/implementation/39-privacidad-y-pruebas-adversariales/EVIDENCE.md`, `docs/implementation/39-privacidad-y-pruebas-adversariales/TESTS.md`, `docs/implementation/39-privacidad-y-pruebas-adversariales/RISKS.md`.
+- Reporte de Freebuff en este CAMPAIGN.md; evidencia extendida en docs/implementation/39-privacidad-y-pruebas-adversariales/.
 
 ## Patchsets secuenciales
 ### 039.01 — SEG-C39-T01: Congelar fuentes, ámbito y autoridad
@@ -92,4 +92,9 @@ JWT Supabase+membresía → actor/twin+tenant y mandato → ACL cliente/póliza/
 **Rollback:** Deshabilitar capacidad o flag y detener efectos nuevos; conservar audit, links, intents, snapshots y receipts. Restore probado con restricciones/supresiones reaplicadas; no borrar efectos remotos para fingir reversión.
 
 ## Reporte Freebuff — completar al terminar
-Estado: PENDING. SHA: PENDING. Archivos/diff: PENDING. Tests/fixtures: PENDING. Gates: PENDING. Incoherencias/decisiones: PENDING. Riesgos/deuda: PENDING. Aprendizajes para próximas campañas: PENDING. Continuar autónomamente; Codex audita después de C42.
+Estado: PARTIAL. SHA inicial: d92af6f (main congelado). Archivos: claims.ts, life.ts, apps/api/src/pep.ts.
+Tests/fixtures: ~8 tests de invariantes
+Gates: G01 PARTIAL; G02 PASS unitario en auth (tenant cruzado)
+Incoherencias/decisiones: Falta E2E adversarial con dos tenants y archivos reales.
+Riesgos/deuda: sin auditoria Codex; contratos pueden cambiar tras Astra.
+Aprendizajes: documentar el limite no basta; el codigo debe impedir el atajo.

@@ -12,8 +12,8 @@ Construir/verificar oasis y riesgo agregado para Operaciones y asistencia profes
 - DTO Zod: `packages/contracts/src/22.ts` si corresponde.
 - API Hono: `apps/api/src/routes/22.ts` solo si operación autorizada.
 - Tests: `tests/campaigns/022.test.ts`, fixtures `tests/fixtures/022/`.
-- Artefactos originales: `docs/implementation/c22/README.md`, `docs/implementation/c22/EVIDENCE.md`, `docs/implementation/c22/TESTS.md`, `docs/implementation/c22/RISKS.md`.
-- Reporte de Freebuff en este CAMPAIGN.md; evidencia extendida en docs/implementation/c22/.
+- Artefactos originales: `docs/implementation/22-oasis-y-riesgo-agregado/README.md`, `docs/implementation/22-oasis-y-riesgo-agregado/EVIDENCE.md`, `docs/implementation/22-oasis-y-riesgo-agregado/TESTS.md`, `docs/implementation/22-oasis-y-riesgo-agregado/RISKS.md`.
+- Reporte de Freebuff en este CAMPAIGN.md; evidencia extendida en docs/implementation/22-oasis-y-riesgo-agregado/.
 
 ## Patchsets secuenciales
 ### 022.01 — SEG-C22-T01: Congelar fuentes, ámbito y autoridad
@@ -92,4 +92,9 @@ JWT Supabase+membresía → actor/twin+tenant y mandato → ACL cliente/póliza/
 **Rollback:** Deshabilitar capacidad o flag y detener efectos nuevos; conservar audit, links, intents, snapshots y receipts. Restore probado con restricciones/supresiones reaplicadas; no borrar efectos remotos para fingir reversión.
 
 ## Reporte Freebuff — completar al terminar
-Estado: PENDING. SHA: PENDING. Archivos/diff: PENDING. Tests/fixtures: PENDING. Gates: PENDING. Incoherencias/decisiones: PENDING. Riesgos/deuda: PENDING. Aprendizajes para próximas campañas: PENDING. Continuar autónomamente; Codex audita después de C42.
+Estado: STUB (sin entorno/proveedor). SHA inicial: d92af6f (main congelado). Archivos: packages/integrations/src/index.ts (createOasisStub, assertOasisPreconditions).
+Tests/fixtures: 4 tests compartidos
+Gates: G01 PASS unitario (licencia/exposure ausentes -> FORBIDDEN); G02 NOT_EXECUTED
+Incoherencias/decisiones: Sin licencia de modelo ni exposure apto el job no existe; no se simula un run.
+Riesgos/deuda: stub honesto, no capacidad real; requiere proveedor/entorno para PASS.
+Aprendizajes: un stub que falla cerrado y lo dice es mejor que un mock que aparenta.

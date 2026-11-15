@@ -1,6 +1,6 @@
 # Alcance autorizado y reglas
 
-El encargo actual es solo investigación, informes, contratos, planning y campañas, no código de aplicación, tests ejecutables, SDK, contenedores o despliegues. Publicar la entrega documental en main de agntia-seguros está autorizado. **No modificar agente ni repos hermanos.** No activar proveedores, enviar mensajes, gastar, usar datos reales o presentar/firmar/pagar/contratar/acreditar para pasar un gate.
+**Autorización vigente (2026-11-14, founder): IMPLEMENTING.** Se autoriza código de aplicación, esquemas, migraciones, tests ejecutables y evidencia en `agntia-seguros`, según el programa de 42 campañas. Registro de la decisión: `docs/factory/07-AUTORIZACION-IMPLEMENTACION.md`. **No modificar `agente` ni repos hermanos.** No escribir en `main` (rama aislada; los merges los decide el founder). No activar proveedores, enviar mensajes, gastar, usar datos reales, desplegar o publicar, ni presentar/firmar/pagar/contratar/acreditar para pasar un gate. Implementar no amplía la autoridad regulatoria del servicio.
 
 Una implementación futura requiere autorización propia. Leer README/handoff/fuentes/licencias/contratos, congelar SHAs y baseline real, ejecutar fases secuencialmente con gates y reportar cada cinco y las dos finales. Documentado no equivale a instalado; mock no prueba proveedor; test planeado no cuenta como ejecutado. Unknown/unsupported/forbidden quedan deshabilitados, no fallback admin/owner/default.
 

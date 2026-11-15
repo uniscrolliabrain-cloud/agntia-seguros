@@ -1,0 +1,12 @@
+{
+  "extends": "../../tsconfig.base.json",
+  "compilerOptions": {
+    "baseUrl": ".",
+    "paths": {
+      "@agntia/contracts": ["../contracts/src/index.ts"],
+      "@agntia/domain": ["../domain/src/index.ts"],
+      "@agntia/runtime": ["../runtime/src/index.ts"]
+    }
+  },
+  "include": ["src/**/*.ts"]
+}

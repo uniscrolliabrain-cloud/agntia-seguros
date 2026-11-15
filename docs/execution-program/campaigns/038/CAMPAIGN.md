@@ -12,8 +12,8 @@ Construir/verificar modelos, coste y observabilidad para Operaciones y asistenci
 - DTO Zod: `packages/contracts/src/38.ts` si corresponde.
 - API Hono: `apps/api/src/routes/38.ts` solo si operación autorizada.
 - Tests: `tests/campaigns/038.test.ts`, fixtures `tests/fixtures/038/`.
-- Artefactos originales: `docs/implementation/c38/README.md`, `docs/implementation/c38/EVIDENCE.md`, `docs/implementation/c38/TESTS.md`, `docs/implementation/c38/RISKS.md`.
-- Reporte de Freebuff en este CAMPAIGN.md; evidencia extendida en docs/implementation/c38/.
+- Artefactos originales: `docs/implementation/38-modelos-coste-y-observabilidad/README.md`, `docs/implementation/38-modelos-coste-y-observabilidad/EVIDENCE.md`, `docs/implementation/38-modelos-coste-y-observabilidad/TESTS.md`, `docs/implementation/38-modelos-coste-y-observabilidad/RISKS.md`.
+- Reporte de Freebuff en este CAMPAIGN.md; evidencia extendida en docs/implementation/38-modelos-coste-y-observabilidad/.
 
 ## Patchsets secuenciales
 ### 038.01 — SEG-C38-T01: Congelar fuentes, ámbito y autoridad
@@ -92,4 +92,9 @@ JWT Supabase+membresía → actor/twin+tenant y mandato → ACL cliente/póliza/
 **Rollback:** Deshabilitar capacidad o flag y detener efectos nuevos; conservar audit, links, intents, snapshots y receipts. Restore probado con restricciones/supresiones reaplicadas; no borrar efectos remotos para fingir reversión.
 
 ## Reporte Freebuff — completar al terminar
-Estado: PENDING. SHA: PENDING. Archivos/diff: PENDING. Tests/fixtures: PENDING. Gates: PENDING. Incoherencias/decisiones: PENDING. Riesgos/deuda: PENDING. Aprendizajes para próximas campañas: PENDING. Continuar autónomamente; Codex audita después de C42.
+Estado: STUB (sin entorno/proveedor). SHA inicial: d92af6f (main congelado). Archivos: packages/telemetry/src/index.ts (BudgetLedger, UsageMeter, redact).
+Tests/fixtures: 5 tests
+Gates: G01 PARTIAL (presupuesto y uso medido; sin proveedor no hay coste real); G02 PASS unitario (doble gasto bloqueado)
+Incoherencias/decisiones: 30/70/300 siguen siendo hipotesis; no hay tarifas ni modelos conectados.
+Riesgos/deuda: stub honesto, no capacidad real; requiere proveedor/entorno para PASS.
+Aprendizajes: un stub que falla cerrado y lo dice es mejor que un mock que aparenta.

@@ -12,8 +12,8 @@ Construir/verificar estimaciones y franquicias para Operaciones y asistencia pro
 - DTO Zod: `packages/contracts/src/20.ts` si corresponde.
 - API Hono: `apps/api/src/routes/20.ts` solo si operación autorizada.
 - Tests: `tests/campaigns/020.test.ts`, fixtures `tests/fixtures/020/`.
-- Artefactos originales: `docs/implementation/c20/README.md`, `docs/implementation/c20/EVIDENCE.md`, `docs/implementation/c20/TESTS.md`, `docs/implementation/c20/RISKS.md`.
-- Reporte de Freebuff en este CAMPAIGN.md; evidencia extendida en docs/implementation/c20/.
+- Artefactos originales: `docs/implementation/20-estimaciones-y-franquicias/README.md`, `docs/implementation/20-estimaciones-y-franquicias/EVIDENCE.md`, `docs/implementation/20-estimaciones-y-franquicias/TESTS.md`, `docs/implementation/20-estimaciones-y-franquicias/RISKS.md`.
+- Reporte de Freebuff en este CAMPAIGN.md; evidencia extendida en docs/implementation/20-estimaciones-y-franquicias/.
 
 ## Patchsets secuenciales
 ### 020.01 — SEG-C20-T01: Congelar fuentes, ámbito y autoridad
@@ -92,4 +92,9 @@ JWT Supabase+membresía → actor/twin+tenant y mandato → ACL cliente/póliza/
 **Rollback:** Deshabilitar capacidad o flag y detener efectos nuevos; conservar audit, links, intents, snapshots y receipts. Restore probado con restricciones/supresiones reaplicadas; no borrar efectos remotos para fingir reversión.
 
 ## Reporte Freebuff — completar al terminar
-Estado: PENDING. SHA: PENDING. Archivos/diff: PENDING. Tests/fixtures: PENDING. Gates: PENDING. Incoherencias/decisiones: PENDING. Riesgos/deuda: PENDING. Aprendizajes para próximas campañas: PENDING. Continuar autónomamente; Codex audita después de C42.
+Estado: PASS (unitario). SHA inicial: d92af6f (main congelado). Archivos: market.ts (computeIllustrativeEstimate).
+Tests/fixtures: 2 tests
+Gates: G01 PASS: falta limite/franquicia -> bloqueo; resultado ilustrativo y topado
+Incoherencias/decisiones: Aritmetica con BigInt sobre unidades menores.
+Riesgos/deuda: sin auditoria Codex; contratos pueden cambiar tras Astra.
+Aprendizajes: documentar el limite no basta; el codigo debe impedir el atajo.

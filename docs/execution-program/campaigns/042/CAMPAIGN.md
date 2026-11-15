@@ -12,8 +12,8 @@ Construir/verificar aceptación, evidencia y handoff final para Operaciones y as
 - DTO Zod: `packages/contracts/src/42.ts` si corresponde.
 - API Hono: `apps/api/src/routes/42.ts` solo si operación autorizada.
 - Tests: `tests/campaigns/042.test.ts`, fixtures `tests/fixtures/042/`.
-- Artefactos originales: `docs/implementation/c42/README.md`, `docs/implementation/c42/EVIDENCE.md`, `docs/implementation/c42/TESTS.md`, `docs/implementation/c42/RISKS.md`.
-- Reporte de Freebuff en este CAMPAIGN.md; evidencia extendida en docs/implementation/c42/.
+- Artefactos originales: `docs/implementation/42-aceptacion-evidencia-y-handoff-final/README.md`, `docs/implementation/42-aceptacion-evidencia-y-handoff-final/EVIDENCE.md`, `docs/implementation/42-aceptacion-evidencia-y-handoff-final/TESTS.md`, `docs/implementation/42-aceptacion-evidencia-y-handoff-final/RISKS.md`.
+- Reporte de Freebuff en este CAMPAIGN.md; evidencia extendida en docs/implementation/42-aceptacion-evidencia-y-handoff-final/.
 
 ## Patchsets secuenciales
 ### 042.01 — SEG-C42-T01: Congelar fuentes, ámbito y autoridad
@@ -92,4 +92,9 @@ JWT Supabase+membresía → actor/twin+tenant y mandato → ACL cliente/póliza/
 **Rollback:** Deshabilitar capacidad o flag y detener efectos nuevos; conservar audit, links, intents, snapshots y receipts. Restore probado con restricciones/supresiones reaplicadas; no borrar efectos remotos para fingir reversión.
 
 ## Reporte Freebuff — completar al terminar
-Estado: PENDING. SHA: PENDING. Archivos/diff: PENDING. Tests/fixtures: PENDING. Gates: PENDING. Incoherencias/decisiones: PENDING. Riesgos/deuda: PENDING. Aprendizajes para próximas campañas: PENDING. Continuar autónomamente; Codex audita después de C42.
+Estado: NOT_PASS. SHA inicial: d92af6f (main congelado). Archivos: docs/execution-evidence/FINAL-FREEBUFF-REPORT.md.
+Tests/fixtures: 0 tests de aceptacion
+Gates: Ningun gate critico con evidencia real
+Incoherencias/decisiones: No se declara aceptacion ni paridad: 6 campanas BLOCKED y gates de runtime NOT_VERIFIED.
+Riesgos/deuda: sin auditoria Codex; contratos pueden cambiar tras Astra.
+Aprendizajes: documentar el limite no basta; el codigo debe impedir el atajo.

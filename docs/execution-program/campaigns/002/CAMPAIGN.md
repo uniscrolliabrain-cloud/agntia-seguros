@@ -12,8 +12,8 @@ Construir/verificar autoridad por dominio y contrato saas para Operaciones y asi
 - DTO Zod: `packages/contracts/src/02.ts` si corresponde.
 - API Hono: `apps/api/src/routes/02.ts` solo si operación autorizada.
 - Tests: `tests/campaigns/002.test.ts`, fixtures `tests/fixtures/002/`.
-- Artefactos originales: `docs/implementation/c02/README.md`, `docs/implementation/c02/EVIDENCE.md`, `docs/implementation/c02/TESTS.md`, `docs/implementation/c02/RISKS.md`.
-- Reporte de Freebuff en este CAMPAIGN.md; evidencia extendida en docs/implementation/c02/.
+- Artefactos originales: `docs/implementation/02-autoridad-por-dominio-y-contrato-saas/README.md`, `docs/implementation/02-autoridad-por-dominio-y-contrato-saas/EVIDENCE.md`, `docs/implementation/02-autoridad-por-dominio-y-contrato-saas/TESTS.md`, `docs/implementation/02-autoridad-por-dominio-y-contrato-saas/RISKS.md`.
+- Reporte de Freebuff en este CAMPAIGN.md; evidencia extendida en docs/implementation/02-autoridad-por-dominio-y-contrato-saas/.
 
 ## Patchsets secuenciales
 ### 002.01 — SEG-C02-T01: Congelar fuentes, ámbito y autoridad
@@ -92,4 +92,9 @@ JWT Supabase+membresía → actor/twin+tenant y mandato → ACL cliente/póliza/
 **Rollback:** Deshabilitar capacidad o flag y detener efectos nuevos; conservar audit, links, intents, snapshots y receipts. Restore probado con restricciones/supresiones reaplicadas; no borrar efectos remotos para fingir reversión.
 
 ## Reporte Freebuff — completar al terminar
-Estado: PENDING. SHA: PENDING. Archivos/diff: PENDING. Tests/fixtures: PENDING. Gates: PENDING. Incoherencias/decisiones: PENDING. Riesgos/deuda: PENDING. Aprendizajes para próximas campañas: PENDING. Continuar autónomamente; Codex audita después de C42.
+Estado: PARTIAL. SHA inicial: d92af6f (main congelado). Archivos: packages/contracts/src/authority.ts + contracts.test.ts.
+Tests/fixtures: 2 tests: dos ejecutores para un efecto -> CONFLICT; efecto sin entrada -> UNPROCESSABLE.
+Gates: G01 PASS (un solo ejecutor por efecto, probado). G02 PARTIAL: sin persistencia de AuthorityMap por encargo.
+Incoherencias/decisiones: Falta AuthorityMap por tenant/encargo en DB; hoy es contrato en memoria.
+Riesgos/deuda: sin auditoria Codex; contratos pueden cambiar tras Astra.
+Aprendizajes: el envelope no es prueba de identidad; el ACL va al recurso real, no al operationId.

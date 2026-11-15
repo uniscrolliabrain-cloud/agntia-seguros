@@ -1,0 +1,22 @@
+{
+  "name": "agntia-seguros",
+  "version": "0.0.0",
+  "private": true,
+  "type": "module",
+  "packageManager": "pnpm@10.20.0",
+  "engines": {
+    "node": ">=22"
+  },
+  "scripts": {
+    "test": "vitest run",
+    "typecheck": "tsc -p packages/contracts/tsconfig.json --noEmit && tsc -p packages/domain/tsconfig.json --noEmit && tsc -p packages/runtime/tsconfig.json --noEmit && tsc -p packages/sdk/tsconfig.json --noEmit && tsc -p packages/identity/tsconfig.json --noEmit && tsc -p packages/integrations/tsconfig.json --noEmit && tsc -p packages/persistence/tsconfig.json --noEmit && tsc -p packages/portal/tsconfig.json --noEmit && tsc -p packages/telemetry/tsconfig.json --noEmit && tsc -p packages/vertical/tsconfig.json --noEmit && tsc -p apps/api/tsconfig.json --noEmit",
+    "check": "pnpm run typecheck && pnpm run test",
+    "dev": "tsx apps/api/src/server.ts"
+  },
+  "devDependencies": {
+    "@types/node": "^24.0.0",
+    "tsx": "^4.20.0",
+    "typescript": "^5.9.0",
+    "vitest": "^3.2.0"
+  }
+}

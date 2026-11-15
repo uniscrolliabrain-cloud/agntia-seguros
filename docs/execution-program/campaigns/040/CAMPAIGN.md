@@ -12,8 +12,8 @@ Construir/verificar vertical e2e y fallos distribuidos para Operaciones y asiste
 - DTO Zod: `packages/contracts/src/40.ts` si corresponde.
 - API Hono: `apps/api/src/routes/40.ts` solo si operación autorizada.
 - Tests: `tests/campaigns/040.test.ts`, fixtures `tests/fixtures/040/`.
-- Artefactos originales: `docs/implementation/c40/README.md`, `docs/implementation/c40/EVIDENCE.md`, `docs/implementation/c40/TESTS.md`, `docs/implementation/c40/RISKS.md`.
-- Reporte de Freebuff en este CAMPAIGN.md; evidencia extendida en docs/implementation/c40/.
+- Artefactos originales: `docs/implementation/40-vertical-e2e-y-fallos-distribuidos/README.md`, `docs/implementation/40-vertical-e2e-y-fallos-distribuidos/EVIDENCE.md`, `docs/implementation/40-vertical-e2e-y-fallos-distribuidos/TESTS.md`, `docs/implementation/40-vertical-e2e-y-fallos-distribuidos/RISKS.md`.
+- Reporte de Freebuff en este CAMPAIGN.md; evidencia extendida en docs/implementation/40-vertical-e2e-y-fallos-distribuidos/.
 
 ## Patchsets secuenciales
 ### 040.01 — SEG-C40-T01: Congelar fuentes, ámbito y autoridad
@@ -92,4 +92,9 @@ JWT Supabase+membresía → actor/twin+tenant y mandato → ACL cliente/póliza/
 **Rollback:** Deshabilitar capacidad o flag y detener efectos nuevos; conservar audit, links, intents, snapshots y receipts. Restore probado con restricciones/supresiones reaplicadas; no borrar efectos remotos para fingir reversión.
 
 ## Reporte Freebuff — completar al terminar
-Estado: PENDING. SHA: PENDING. Archivos/diff: PENDING. Tests/fixtures: PENDING. Gates: PENDING. Incoherencias/decisiones: PENDING. Riesgos/deuda: PENDING. Aprendizajes para próximas campañas: PENDING. Continuar autónomamente; Codex audita después de C42.
+Estado: STUB (sin entorno/proveedor). SHA inicial: d92af6f (main congelado). Archivos: packages/vertical/src/index.ts (runVertical).
+Tests/fixtures: 3 tests
+Gates: G01 PASS unitario en proceso (cadena completa y 0 efectos); G02 NOT_VERIFIED (sin dos tenants reales)
+Incoherencias/decisiones: Es una vertical en proceso, no un E2E desplegado: sin DB, portal ni sink de operador.
+Riesgos/deuda: stub honesto, no capacidad real; requiere proveedor/entorno para PASS.
+Aprendizajes: un stub que falla cerrado y lo dice es mejor que un mock que aparenta.

@@ -12,8 +12,8 @@ Construir/verificar necesidades y demandas para Operaciones y asistencia profesi
 - DTO Zod: `packages/contracts/src/14.ts` si corresponde.
 - API Hono: `apps/api/src/routes/14.ts` solo si operación autorizada.
 - Tests: `tests/campaigns/014.test.ts`, fixtures `tests/fixtures/014/`.
-- Artefactos originales: `docs/implementation/c14/README.md`, `docs/implementation/c14/EVIDENCE.md`, `docs/implementation/c14/TESTS.md`, `docs/implementation/c14/RISKS.md`.
-- Reporte de Freebuff en este CAMPAIGN.md; evidencia extendida en docs/implementation/c14/.
+- Artefactos originales: `docs/implementation/14-necesidades-y-demandas/README.md`, `docs/implementation/14-necesidades-y-demandas/EVIDENCE.md`, `docs/implementation/14-necesidades-y-demandas/TESTS.md`, `docs/implementation/14-necesidades-y-demandas/RISKS.md`.
+- Reporte de Freebuff en este CAMPAIGN.md; evidencia extendida en docs/implementation/14-necesidades-y-demandas/.
 
 ## Patchsets secuenciales
 ### 014.01 — SEG-C14-T01: Congelar fuentes, ámbito y autoridad
@@ -92,4 +92,9 @@ JWT Supabase+membresía → actor/twin+tenant y mandato → ACL cliente/póliza/
 **Rollback:** Deshabilitar capacidad o flag y detener efectos nuevos; conservar audit, links, intents, snapshots y receipts. Restore probado con restricciones/supresiones reaplicadas; no borrar efectos remotos para fingir reversión.
 
 ## Reporte Freebuff — completar al terminar
-Estado: PENDING. SHA: PENDING. Archivos/diff: PENDING. Tests/fixtures: PENDING. Gates: PENDING. Incoherencias/decisiones: PENDING. Riesgos/deuda: PENDING. Aprendizajes para próximas campañas: PENDING. Continuar autónomamente; Codex audita después de C42.
+Estado: PASS (unitario). SHA inicial: d92af6f (main congelado). Archivos: market.ts (assessNeeds).
+Tests/fixtures: 1 test
+Gates: G01 PASS: necesidad contradictoria -> needs_professional_review, ranking null
+Incoherencias/decisiones: El servicio no ordena ni recomienda.
+Riesgos/deuda: sin auditoria Codex; contratos pueden cambiar tras Astra.
+Aprendizajes: documentar el limite no basta; el codigo debe impedir el atajo.

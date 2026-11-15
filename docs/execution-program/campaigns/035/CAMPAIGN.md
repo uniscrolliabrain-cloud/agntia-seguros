@@ -12,8 +12,8 @@ Construir/verificar sdk typescript, hono y tools para Operaciones y asistencia p
 - DTO Zod: `packages/contracts/src/35.ts` si corresponde.
 - API Hono: `apps/api/src/routes/35.ts` solo si operación autorizada.
 - Tests: `tests/campaigns/035.test.ts`, fixtures `tests/fixtures/035/`.
-- Artefactos originales: `docs/implementation/c35/README.md`, `docs/implementation/c35/EVIDENCE.md`, `docs/implementation/c35/TESTS.md`, `docs/implementation/c35/RISKS.md`.
-- Reporte de Freebuff en este CAMPAIGN.md; evidencia extendida en docs/implementation/c35/.
+- Artefactos originales: `docs/implementation/35-sdk-typescript-hono-y-tools/README.md`, `docs/implementation/35-sdk-typescript-hono-y-tools/EVIDENCE.md`, `docs/implementation/35-sdk-typescript-hono-y-tools/TESTS.md`, `docs/implementation/35-sdk-typescript-hono-y-tools/RISKS.md`.
+- Reporte de Freebuff en este CAMPAIGN.md; evidencia extendida en docs/implementation/35-sdk-typescript-hono-y-tools/.
 
 ## Patchsets secuenciales
 ### 035.01 — SEG-C35-T01: Congelar fuentes, ámbito y autoridad
@@ -92,4 +92,9 @@ JWT Supabase+membresía → actor/twin+tenant y mandato → ACL cliente/póliza/
 **Rollback:** Deshabilitar capacidad o flag y detener efectos nuevos; conservar audit, links, intents, snapshots y receipts. Restore probado con restricciones/supresiones reaplicadas; no borrar efectos remotos para fingir reversión.
 
 ## Reporte Freebuff — completar al terminar
-Estado: PENDING. SHA: PENDING. Archivos/diff: PENDING. Tests/fixtures: PENDING. Gates: PENDING. Incoherencias/decisiones: PENDING. Riesgos/deuda: PENDING. Aprendizajes para próximas campañas: PENDING. Continuar autónomamente; Codex audita después de C42.
+Estado: PASS (unitario). SHA inicial: d92af6f (main congelado). Archivos: packages/sdk/src/index.ts (TOOL_CATALOGUE, assertToolAllowed, createSegurosClient).
+Tests/fixtures: 6 tests
+Gates: G01 PASS: tool generica (execute/sql/http/admin) rechazada
+Incoherencias/decisiones: SDK solo con paths allowlistados; no hay passthrough.
+Riesgos/deuda: sin auditoria Codex; contratos pueden cambiar tras Astra.
+Aprendizajes: documentar el limite no basta; el codigo debe impedir el atajo.

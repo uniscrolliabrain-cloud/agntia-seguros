@@ -12,8 +12,8 @@ Construir/verificar reportes, dashboard e infografías para Operaciones y asiste
 - DTO Zod: `packages/contracts/src/33.ts` si corresponde.
 - API Hono: `apps/api/src/routes/33.ts` solo si operación autorizada.
 - Tests: `tests/campaigns/033.test.ts`, fixtures `tests/fixtures/033/`.
-- Artefactos originales: `docs/implementation/c33/README.md`, `docs/implementation/c33/EVIDENCE.md`, `docs/implementation/c33/TESTS.md`, `docs/implementation/c33/RISKS.md`.
-- Reporte de Freebuff en este CAMPAIGN.md; evidencia extendida en docs/implementation/c33/.
+- Artefactos originales: `docs/implementation/33-reportes-dashboard-e-infografias/README.md`, `docs/implementation/33-reportes-dashboard-e-infografias/EVIDENCE.md`, `docs/implementation/33-reportes-dashboard-e-infografias/TESTS.md`, `docs/implementation/33-reportes-dashboard-e-infografias/RISKS.md`.
+- Reporte de Freebuff en este CAMPAIGN.md; evidencia extendida en docs/implementation/33-reportes-dashboard-e-infografias/.
 
 ## Patchsets secuenciales
 ### 033.01 — SEG-C33-T01: Congelar fuentes, ámbito y autoridad
@@ -92,4 +92,9 @@ JWT Supabase+membresía → actor/twin+tenant y mandato → ACL cliente/póliza/
 **Rollback:** Deshabilitar capacidad o flag y detener efectos nuevos; conservar audit, links, intents, snapshots y receipts. Restore probado con restricciones/supresiones reaplicadas; no borrar efectos remotos para fingir reversión.
 
 ## Reporte Freebuff — completar al terminar
-Estado: PENDING. SHA: PENDING. Archivos/diff: PENDING. Tests/fixtures: PENDING. Gates: PENDING. Incoherencias/decisiones: PENDING. Riesgos/deuda: PENDING. Aprendizajes para próximas campañas: PENDING. Continuar autónomamente; Codex audita después de C42.
+Estado: PASS (unitario). SHA inicial: d92af6f (main congelado). Archivos: life.ts (buildReportSnapshot).
+Tests/fixtures: 2 tests
+Gates: G01 PASS: dato tardio o valor ausente -> needs_revision
+Incoherencias/decisiones: No se inventan cifras: valueRef nulo fuerza revision.
+Riesgos/deuda: sin auditoria Codex; contratos pueden cambiar tras Astra.
+Aprendizajes: documentar el limite no basta; el codigo debe impedir el atajo.

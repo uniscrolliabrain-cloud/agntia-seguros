@@ -12,8 +12,8 @@ Construir/verificar secretos, discovery y aislamiento remoto para Operaciones y 
 - DTO Zod: `packages/contracts/src/08.ts` si corresponde.
 - API Hono: `apps/api/src/routes/08.ts` solo si operación autorizada.
 - Tests: `tests/campaigns/008.test.ts`, fixtures `tests/fixtures/008/`.
-- Artefactos originales: `docs/implementation/c08/README.md`, `docs/implementation/c08/EVIDENCE.md`, `docs/implementation/c08/TESTS.md`, `docs/implementation/c08/RISKS.md`.
-- Reporte de Freebuff en este CAMPAIGN.md; evidencia extendida en docs/implementation/c08/.
+- Artefactos originales: `docs/implementation/08-secretos-discovery-y-aislamiento-remoto/README.md`, `docs/implementation/08-secretos-discovery-y-aislamiento-remoto/EVIDENCE.md`, `docs/implementation/08-secretos-discovery-y-aislamiento-remoto/TESTS.md`, `docs/implementation/08-secretos-discovery-y-aislamiento-remoto/RISKS.md`.
+- Reporte de Freebuff en este CAMPAIGN.md; evidencia extendida en docs/implementation/08-secretos-discovery-y-aislamiento-remoto/.
 
 ## Patchsets secuenciales
 ### 008.01 — SEG-C08-T01: Congelar fuentes, ámbito y autoridad
@@ -92,4 +92,9 @@ JWT Supabase+membresía → actor/twin+tenant y mandato → ACL cliente/póliza/
 **Rollback:** Deshabilitar capacidad o flag y detener efectos nuevos; conservar audit, links, intents, snapshots y receipts. Restore probado con restricciones/supresiones reaplicadas; no borrar efectos remotos para fingir reversión.
 
 ## Reporte Freebuff — completar al terminar
-Estado: PENDING. SHA: PENDING. Archivos/diff: PENDING. Tests/fixtures: PENDING. Gates: PENDING. Incoherencias/decisiones: PENDING. Riesgos/deuda: PENDING. Aprendizajes para próximas campañas: PENDING. Continuar autónomamente; Codex audita después de C42.
+Estado: PASS (unitario). SHA inicial: d92af6f (main congelado). Archivos: packages/runtime/src/index.ts (CapabilityReport, requireUsableOperation, assertWriteForbidden).
+Tests/fixtures: 3 tests discovery
+Gates: G01 PASS unitario; G02 PASS unitario (unsupported/unknown -> FORBIDDEN). Discovery real: NOT_VERIFIED
+Incoherencias/decisiones: Sin proveedor real no hay verified_runtime; todo queda deshabilitado por diseno.
+Riesgos/deuda: sin auditoria Codex; contratos pueden cambiar tras Astra.
+Aprendizajes: documentar el limite no basta; el codigo debe impedir el atajo.

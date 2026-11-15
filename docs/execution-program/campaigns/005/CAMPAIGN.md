@@ -12,8 +12,8 @@ Construir/verificar dtos, esquemas y errores para Operaciones y asistencia profe
 - DTO Zod: `packages/contracts/src/05.ts` si corresponde.
 - API Hono: `apps/api/src/routes/05.ts` solo si operación autorizada.
 - Tests: `tests/campaigns/005.test.ts`, fixtures `tests/fixtures/005/`.
-- Artefactos originales: `docs/implementation/c05/README.md`, `docs/implementation/c05/EVIDENCE.md`, `docs/implementation/c05/TESTS.md`, `docs/implementation/c05/RISKS.md`.
-- Reporte de Freebuff en este CAMPAIGN.md; evidencia extendida en docs/implementation/c05/.
+- Artefactos originales: `docs/implementation/05-dtos-esquemas-y-errores/README.md`, `docs/implementation/05-dtos-esquemas-y-errores/EVIDENCE.md`, `docs/implementation/05-dtos-esquemas-y-errores/TESTS.md`, `docs/implementation/05-dtos-esquemas-y-errores/RISKS.md`.
+- Reporte de Freebuff en este CAMPAIGN.md; evidencia extendida en docs/implementation/05-dtos-esquemas-y-errores/.
 
 ## Patchsets secuenciales
 ### 005.01 — SEG-C05-T01: Congelar fuentes, ámbito y autoridad
@@ -92,4 +92,9 @@ JWT Supabase+membresía → actor/twin+tenant y mandato → ACL cliente/póliza/
 **Rollback:** Deshabilitar capacidad o flag y detener efectos nuevos; conservar audit, links, intents, snapshots y receipts. Restore probado con restricciones/supresiones reaplicadas; no borrar efectos remotos para fingir reversión.
 
 ## Reporte Freebuff — completar al terminar
-Estado: PENDING. SHA: PENDING. Archivos/diff: PENDING. Tests/fixtures: PENDING. Gates: PENDING. Incoherencias/decisiones: PENDING. Riesgos/deuda: PENDING. Aprendizajes para próximas campañas: PENDING. Continuar autónomamente; Codex audita después de C42.
+Estado: PASS (unitario). SHA inicial: d92af6f (main congelado). Archivos: packages/contracts/src/envelope.ts, money.ts, errors.ts, ids.ts, canonical.ts + contracts.test.ts.
+Tests/fixtures: 21 tests: floats/NaN/exponente rechazados, envelope estricto, codigos cerrados, canonical JSON.
+Gates: G01 PASS (NaN/float/fecha invalida/campo extra rechazados). G02 PASS.
+Incoherencias/decisiones: Fecha ISO se valida por regex, no por parser de calendario real.
+Riesgos/deuda: sin auditoria Codex; contratos pueden cambiar tras Astra.
+Aprendizajes: el envelope no es prueba de identidad; el ACL va al recurso real, no al operationId.

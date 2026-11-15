@@ -12,8 +12,8 @@ Construir/verificar cadena decisional revisable para Operaciones y asistencia pr
 - DTO Zod: `packages/contracts/src/25.ts` si corresponde.
 - API Hono: `apps/api/src/routes/25.ts` solo si operación autorizada.
 - Tests: `tests/campaigns/025.test.ts`, fixtures `tests/fixtures/025/`.
-- Artefactos originales: `docs/implementation/c25/README.md`, `docs/implementation/c25/EVIDENCE.md`, `docs/implementation/c25/TESTS.md`, `docs/implementation/c25/RISKS.md`.
-- Reporte de Freebuff en este CAMPAIGN.md; evidencia extendida en docs/implementation/c25/.
+- Artefactos originales: `docs/implementation/25-cadena-decisional-revisable/README.md`, `docs/implementation/25-cadena-decisional-revisable/EVIDENCE.md`, `docs/implementation/25-cadena-decisional-revisable/TESTS.md`, `docs/implementation/25-cadena-decisional-revisable/RISKS.md`.
+- Reporte de Freebuff en este CAMPAIGN.md; evidencia extendida en docs/implementation/25-cadena-decisional-revisable/.
 
 ## Patchsets secuenciales
 ### 025.01 — SEG-C25-T01: Congelar fuentes, ámbito y autoridad
@@ -92,4 +92,9 @@ JWT Supabase+membresía → actor/twin+tenant y mandato → ACL cliente/póliza/
 **Rollback:** Deshabilitar capacidad o flag y detener efectos nuevos; conservar audit, links, intents, snapshots y receipts. Restore probado con restricciones/supresiones reaplicadas; no borrar efectos remotos para fingir reversión.
 
 ## Reporte Freebuff — completar al terminar
-Estado: PENDING. SHA: PENDING. Archivos/diff: PENDING. Tests/fixtures: PENDING. Gates: PENDING. Incoherencias/decisiones: PENDING. Riesgos/deuda: PENDING. Aprendizajes para próximas campañas: PENDING. Continuar autónomamente; Codex audita después de C42.
+Estado: PASS (unitario). SHA inicial: d92af6f (main congelado). Archivos: claims.ts (evaluateDecisionChain).
+Tests/fixtures: 2 tests
+Gates: G01 PASS: dependencia unknown con paso applies -> inconsistencia
+Incoherencias/decisiones: Propagacion de variantes comprobada en miniatura.
+Riesgos/deuda: sin auditoria Codex; contratos pueden cambiar tras Astra.
+Aprendizajes: documentar el limite no basta; el codigo debe impedir el atajo.

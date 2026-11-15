@@ -12,8 +12,8 @@ Construir/verificar renovación y cambios para Operaciones y asistencia profesio
 - DTO Zod: `packages/contracts/src/29.ts` si corresponde.
 - API Hono: `apps/api/src/routes/29.ts` solo si operación autorizada.
 - Tests: `tests/campaigns/029.test.ts`, fixtures `tests/fixtures/029/`.
-- Artefactos originales: `docs/implementation/c29/README.md`, `docs/implementation/c29/EVIDENCE.md`, `docs/implementation/c29/TESTS.md`, `docs/implementation/c29/RISKS.md`.
-- Reporte de Freebuff en este CAMPAIGN.md; evidencia extendida en docs/implementation/c29/.
+- Artefactos originales: `docs/implementation/29-renovacion-y-cambios/README.md`, `docs/implementation/29-renovacion-y-cambios/EVIDENCE.md`, `docs/implementation/29-renovacion-y-cambios/TESTS.md`, `docs/implementation/29-renovacion-y-cambios/RISKS.md`.
+- Reporte de Freebuff en este CAMPAIGN.md; evidencia extendida en docs/implementation/29-renovacion-y-cambios/.
 
 ## Patchsets secuenciales
 ### 029.01 — SEG-C29-T01: Congelar fuentes, ámbito y autoridad
@@ -92,4 +92,9 @@ JWT Supabase+membresía → actor/twin+tenant y mandato → ACL cliente/póliza/
 **Rollback:** Deshabilitar capacidad o flag y detener efectos nuevos; conservar audit, links, intents, snapshots y receipts. Restore probado con restricciones/supresiones reaplicadas; no borrar efectos remotos para fingir reversión.
 
 ## Reporte Freebuff — completar al terminar
-Estado: PENDING. SHA: PENDING. Archivos/diff: PENDING. Tests/fixtures: PENDING. Gates: PENDING. Incoherencias/decisiones: PENDING. Riesgos/deuda: PENDING. Aprendizajes para próximas campañas: PENDING. Continuar autónomamente; Codex audita después de C42.
+Estado: PASS (unitario). SHA inicial: d92af6f (main congelado). Archivos: life.ts (proposeRenewal).
+Tests/fixtures: 1 test
+Gates: G01 PASS: peticion por voz -> propuesta con effect none
+Incoherencias/decisiones: Requiere operador autorizado; no renueva ni cancela.
+Riesgos/deuda: sin auditoria Codex; contratos pueden cambiar tras Astra.
+Aprendizajes: documentar el limite no basta; el codigo debe impedir el atajo.

@@ -12,8 +12,8 @@ Construir/verificar baseline, fuentes y alcance para Operaciones y asistencia pr
 - DTO Zod: `packages/contracts/src/01.ts` si corresponde.
 - API Hono: `apps/api/src/routes/01.ts` solo si operación autorizada.
 - Tests: `tests/campaigns/001.test.ts`, fixtures `tests/fixtures/001/`.
-- Artefactos originales: `docs/implementation/c01/README.md`, `docs/implementation/c01/EVIDENCE.md`, `docs/implementation/c01/TESTS.md`, `docs/implementation/c01/RISKS.md`.
-- Reporte de Freebuff en este CAMPAIGN.md; evidencia extendida en docs/implementation/c01/.
+- Artefactos originales: `docs/implementation/01-baseline-fuentes-y-alcance/README.md`, `docs/implementation/01-baseline-fuentes-y-alcance/EVIDENCE.md`, `docs/implementation/01-baseline-fuentes-y-alcance/TESTS.md`, `docs/implementation/01-baseline-fuentes-y-alcance/RISKS.md`.
+- Reporte de Freebuff en este CAMPAIGN.md; evidencia extendida en docs/implementation/01-baseline-fuentes-y-alcance/.
 
 ## Patchsets secuenciales
 ### 001.01 — SEG-C01-T01: Congelar fuentes, ámbito y autoridad
@@ -92,4 +92,9 @@ JWT Supabase+membresía → actor/twin+tenant y mandato → ACL cliente/póliza/
 **Rollback:** Deshabilitar capacidad o flag y detener efectos nuevos; conservar audit, links, intents, snapshots y receipts. Restore probado con restricciones/supresiones reaplicadas; no borrar efectos remotos para fingir reversión.
 
 ## Reporte Freebuff — completar al terminar
-Estado: PENDING. SHA: PENDING. Archivos/diff: PENDING. Tests/fixtures: PENDING. Gates: PENDING. Incoherencias/decisiones: PENDING. Riesgos/deuda: PENDING. Aprendizajes para próximas campañas: PENDING. Continuar autónomamente; Codex audita después de C42.
+Estado: PASS (documental). SHA inicial: d92af6f (main congelado). Archivos: docs/factory/07-AUTORIZACION-IMPLEMENTACION.md, docs/execution-evidence/FOUNDATIONS-C01-C08.md.
+Tests/fixtures: Sin tests de producto: C01 es congelacion de baseline.
+Gates: G01 PASS documental (SHA main d92af6f congelado). G02 N/A (fase sin efecto).
+Incoherencias/decisiones: docs/factory/06 exigia Astra antes de codigo; el founder levanto el gate (registro en 07-AUTORIZACION).
+Riesgos/deuda: sin auditoria Codex; contratos pueden cambiar tras Astra.
+Aprendizajes: el envelope no es prueba de identidad; el ACL va al recurso real, no al operationId.

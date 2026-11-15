@@ -12,8 +12,8 @@ Construir/verificar riesgo de agentes ia para Operaciones y asistencia profesion
 - DTO Zod: `packages/contracts/src/31.ts` si corresponde.
 - API Hono: `apps/api/src/routes/31.ts` solo si operación autorizada.
 - Tests: `tests/campaigns/031.test.ts`, fixtures `tests/fixtures/031/`.
-- Artefactos originales: `docs/implementation/c31/README.md`, `docs/implementation/c31/EVIDENCE.md`, `docs/implementation/c31/TESTS.md`, `docs/implementation/c31/RISKS.md`.
-- Reporte de Freebuff en este CAMPAIGN.md; evidencia extendida en docs/implementation/c31/.
+- Artefactos originales: `docs/implementation/31-riesgo-de-agentes-ia/README.md`, `docs/implementation/31-riesgo-de-agentes-ia/EVIDENCE.md`, `docs/implementation/31-riesgo-de-agentes-ia/TESTS.md`, `docs/implementation/31-riesgo-de-agentes-ia/RISKS.md`.
+- Reporte de Freebuff en este CAMPAIGN.md; evidencia extendida en docs/implementation/31-riesgo-de-agentes-ia/.
 
 ## Patchsets secuenciales
 ### 031.01 — SEG-C31-T01: Congelar fuentes, ámbito y autoridad
@@ -92,4 +92,9 @@ JWT Supabase+membresía → actor/twin+tenant y mandato → ACL cliente/póliza/
 **Rollback:** Deshabilitar capacidad o flag y detener efectos nuevos; conservar audit, links, intents, snapshots y receipts. Restore probado con restricciones/supresiones reaplicadas; no borrar efectos remotos para fingir reversión.
 
 ## Reporte Freebuff — completar al terminar
-Estado: PENDING. SHA: PENDING. Archivos/diff: PENDING. Tests/fixtures: PENDING. Gates: PENDING. Incoherencias/decisiones: PENDING. Riesgos/deuda: PENDING. Aprendizajes para próximas campañas: PENDING. Continuar autónomamente; Codex audita después de C42.
+Estado: PASS (unitario). SHA inicial: d92af6f (main congelado). Archivos: life.ts (assessAgentRiskIncident).
+Tests/fixtures: 1 test
+Gates: G01 PASS: evento ciber no prueba exclusion ni cobertura
+Incoherencias/decisiones: coverage unknown/requires_policy_review; covered y excluded en false.
+Riesgos/deuda: sin auditoria Codex; contratos pueden cambiar tras Astra.
+Aprendizajes: documentar el limite no basta; el codigo debe impedir el atajo.

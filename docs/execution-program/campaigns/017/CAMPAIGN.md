@@ -12,8 +12,8 @@ Construir/verificar importación de ofertas para Operaciones y asistencia profes
 - DTO Zod: `packages/contracts/src/17.ts` si corresponde.
 - API Hono: `apps/api/src/routes/17.ts` solo si operación autorizada.
 - Tests: `tests/campaigns/017.test.ts`, fixtures `tests/fixtures/017/`.
-- Artefactos originales: `docs/implementation/c17/README.md`, `docs/implementation/c17/EVIDENCE.md`, `docs/implementation/c17/TESTS.md`, `docs/implementation/c17/RISKS.md`.
-- Reporte de Freebuff en este CAMPAIGN.md; evidencia extendida en docs/implementation/c17/.
+- Artefactos originales: `docs/implementation/17-importacion-de-ofertas/README.md`, `docs/implementation/17-importacion-de-ofertas/EVIDENCE.md`, `docs/implementation/17-importacion-de-ofertas/TESTS.md`, `docs/implementation/17-importacion-de-ofertas/RISKS.md`.
+- Reporte de Freebuff en este CAMPAIGN.md; evidencia extendida en docs/implementation/17-importacion-de-ofertas/.
 
 ## Patchsets secuenciales
 ### 017.01 — SEG-C17-T01: Congelar fuentes, ámbito y autoridad
@@ -92,4 +92,9 @@ JWT Supabase+membresía → actor/twin+tenant y mandato → ACL cliente/póliza/
 **Rollback:** Deshabilitar capacidad o flag y detener efectos nuevos; conservar audit, links, intents, snapshots y receipts. Restore probado con restricciones/supresiones reaplicadas; no borrar efectos remotos para fingir reversión.
 
 ## Reporte Freebuff — completar al terminar
-Estado: PENDING. SHA: PENDING. Archivos/diff: PENDING. Tests/fixtures: PENDING. Gates: PENDING. Incoherencias/decisiones: PENDING. Riesgos/deuda: PENDING. Aprendizajes para próximas campañas: PENDING. Continuar autónomamente; Codex audita después de C42.
+Estado: PASS (unitario). SHA inicial: d92af6f (main congelado). Archivos: market.ts (isQuoteCurrent, selectCurrentQuote).
+Tests/fixtures: 1 test
+Gates: G01 PASS: oferta caducada no seleccionable como vigente
+Incoherencias/decisiones: Oferta importada no equivale a poliza vinculada.
+Riesgos/deuda: sin auditoria Codex; contratos pueden cambiar tras Astra.
+Aprendizajes: documentar el limite no basta; el codigo debe impedir el atajo.

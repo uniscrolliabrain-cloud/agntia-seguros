@@ -12,8 +12,8 @@ Construir/verificar representación y destinatarios para Operaciones y asistenci
 - DTO Zod: `packages/contracts/src/10.ts` si corresponde.
 - API Hono: `apps/api/src/routes/10.ts` solo si operación autorizada.
 - Tests: `tests/campaigns/010.test.ts`, fixtures `tests/fixtures/010/`.
-- Artefactos originales: `docs/implementation/c10/README.md`, `docs/implementation/c10/EVIDENCE.md`, `docs/implementation/c10/TESTS.md`, `docs/implementation/c10/RISKS.md`.
-- Reporte de Freebuff en este CAMPAIGN.md; evidencia extendida en docs/implementation/c10/.
+- Artefactos originales: `docs/implementation/10-representacion-y-destinatarios/README.md`, `docs/implementation/10-representacion-y-destinatarios/EVIDENCE.md`, `docs/implementation/10-representacion-y-destinatarios/TESTS.md`, `docs/implementation/10-representacion-y-destinatarios/RISKS.md`.
+- Reporte de Freebuff en este CAMPAIGN.md; evidencia extendida en docs/implementation/10-representacion-y-destinatarios/.
 
 ## Patchsets secuenciales
 ### 010.01 — SEG-C10-T01: Congelar fuentes, ámbito y autoridad
@@ -92,4 +92,9 @@ JWT Supabase+membresía → actor/twin+tenant y mandato → ACL cliente/póliza/
 **Rollback:** Deshabilitar capacidad o flag y detener efectos nuevos; conservar audit, links, intents, snapshots y receipts. Restore probado con restricciones/supresiones reaplicadas; no borrar efectos remotos para fingir reversión.
 
 ## Reporte Freebuff — completar al terminar
-Estado: PENDING. SHA: PENDING. Archivos/diff: PENDING. Tests/fixtures: PENDING. Gates: PENDING. Incoherencias/decisiones: PENDING. Riesgos/deuda: PENDING. Aprendizajes para próximas campañas: PENDING. Continuar autónomamente; Codex audita después de C42.
+Estado: PASS (unitario). SHA inicial: d92af6f (main congelado). Archivos: assessment.ts (canReadPrivateDocument).
+Tests/fixtures: 4 tests
+Gates: G01 PASS: solicitante sin representacion no ve documentos privados
+Incoherencias/decisiones: Representacion exige evidenceRef; tomador y asegurado son ids distintos.
+Riesgos/deuda: sin auditoria Codex; contratos pueden cambiar tras Astra.
+Aprendizajes: documentar el limite no basta; el codigo debe impedir el atajo.

@@ -12,8 +12,8 @@ Construir/verificar evaluación del rol y actividad para Operaciones y asistenci
 - DTO Zod: `packages/contracts/src/09.ts` si corresponde.
 - API Hono: `apps/api/src/routes/09.ts` solo si operación autorizada.
 - Tests: `tests/campaigns/009.test.ts`, fixtures `tests/fixtures/009/`.
-- Artefactos originales: `docs/implementation/c09/README.md`, `docs/implementation/c09/EVIDENCE.md`, `docs/implementation/c09/TESTS.md`, `docs/implementation/c09/RISKS.md`.
-- Reporte de Freebuff en este CAMPAIGN.md; evidencia extendida en docs/implementation/c09/.
+- Artefactos originales: `docs/implementation/09-evaluacion-del-rol-y-actividad/README.md`, `docs/implementation/09-evaluacion-del-rol-y-actividad/EVIDENCE.md`, `docs/implementation/09-evaluacion-del-rol-y-actividad/TESTS.md`, `docs/implementation/09-evaluacion-del-rol-y-actividad/RISKS.md`.
+- Reporte de Freebuff en este CAMPAIGN.md; evidencia extendida en docs/implementation/09-evaluacion-del-rol-y-actividad/.
 
 ## Patchsets secuenciales
 ### 009.01 — SEG-C09-T01: Congelar fuentes, ámbito y autoridad
@@ -92,4 +92,9 @@ JWT Supabase+membresía → actor/twin+tenant y mandato → ACL cliente/póliza/
 **Rollback:** Deshabilitar capacidad o flag y detener efectos nuevos; conservar audit, links, intents, snapshots y receipts. Restore probado con restricciones/supresiones reaplicadas; no borrar efectos remotos para fingir reversión.
 
 ## Reporte Freebuff — completar al terminar
-Estado: PENDING. SHA: PENDING. Archivos/diff: PENDING. Tests/fixtures: PENDING. Gates: PENDING. Incoherencias/decisiones: PENDING. Riesgos/deuda: PENDING. Aprendizajes para próximas campañas: PENDING. Continuar autónomamente; Codex audita después de C42.
+Estado: PASS (unitario). SHA inicial: d92af6f (main congelado). Archivos: packages/domain/src/assessment.ts (assessServiceRole).
+Tests/fixtures: 3 tests
+Gates: G01 PASS: sin operador/alcance competente -> authorization_pending
+Incoherencias/decisiones: Territorio/productLine se validan como datos, no como habilitacion legal.
+Riesgos/deuda: sin auditoria Codex; contratos pueden cambiar tras Astra.
+Aprendizajes: documentar el limite no basta; el codigo debe impedir el atajo.

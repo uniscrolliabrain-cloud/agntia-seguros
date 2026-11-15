@@ -12,8 +12,8 @@ Construir/verificar inventario de coberturas para Operaciones y asistencia profe
 - DTO Zod: `packages/contracts/src/15.ts` si corresponde.
 - API Hono: `apps/api/src/routes/15.ts` solo si operación autorizada.
 - Tests: `tests/campaigns/015.test.ts`, fixtures `tests/fixtures/015/`.
-- Artefactos originales: `docs/implementation/c15/README.md`, `docs/implementation/c15/EVIDENCE.md`, `docs/implementation/c15/TESTS.md`, `docs/implementation/c15/RISKS.md`.
-- Reporte de Freebuff en este CAMPAIGN.md; evidencia extendida en docs/implementation/c15/.
+- Artefactos originales: `docs/implementation/15-inventario-de-coberturas/README.md`, `docs/implementation/15-inventario-de-coberturas/EVIDENCE.md`, `docs/implementation/15-inventario-de-coberturas/TESTS.md`, `docs/implementation/15-inventario-de-coberturas/RISKS.md`.
+- Reporte de Freebuff en este CAMPAIGN.md; evidencia extendida en docs/implementation/15-inventario-de-coberturas/.
 
 ## Patchsets secuenciales
 ### 015.01 — SEG-C15-T01: Congelar fuentes, ámbito y autoridad
@@ -92,4 +92,9 @@ JWT Supabase+membresía → actor/twin+tenant y mandato → ACL cliente/póliza/
 **Rollback:** Deshabilitar capacidad o flag y detener efectos nuevos; conservar audit, links, intents, snapshots y receipts. Restore probado con restricciones/supresiones reaplicadas; no borrar efectos remotos para fingir reversión.
 
 ## Reporte Freebuff — completar al terminar
-Estado: PENDING. SHA: PENDING. Archivos/diff: PENDING. Tests/fixtures: PENDING. Gates: PENDING. Incoherencias/decisiones: PENDING. Riesgos/deuda: PENDING. Aprendizajes para próximas campañas: PENDING. Continuar autónomamente; Codex audita después de C42.
+Estado: PASS (unitario). SHA inicial: d92af6f (main congelado). Archivos: policy.ts (buildCoverageInventory, assertFirmCoverageConclusion, sumLimits).
+Tests/fixtures: 2 tests
+Gates: G01 PASS: falta condicion particular -> unknown y conclusion firme bloqueada
+Incoherencias/decisiones: Suma de limites exige misma denominacion.
+Riesgos/deuda: sin auditoria Codex; contratos pueden cambiar tras Astra.
+Aprendizajes: documentar el limite no basta; el codigo debe impedir el atajo.

@@ -12,8 +12,8 @@ Construir/verificar mandatos, finalidad y aprobaciones para Operaciones y asiste
 - DTO Zod: `packages/contracts/src/07.ts` si corresponde.
 - API Hono: `apps/api/src/routes/07.ts` solo si operación autorizada.
 - Tests: `tests/campaigns/007.test.ts`, fixtures `tests/fixtures/007/`.
-- Artefactos originales: `docs/implementation/c07/README.md`, `docs/implementation/c07/EVIDENCE.md`, `docs/implementation/c07/TESTS.md`, `docs/implementation/c07/RISKS.md`.
-- Reporte de Freebuff en este CAMPAIGN.md; evidencia extendida en docs/implementation/c07/.
+- Artefactos originales: `docs/implementation/07-mandatos-finalidad-y-aprobaciones/README.md`, `docs/implementation/07-mandatos-finalidad-y-aprobaciones/EVIDENCE.md`, `docs/implementation/07-mandatos-finalidad-y-aprobaciones/TESTS.md`, `docs/implementation/07-mandatos-finalidad-y-aprobaciones/RISKS.md`.
+- Reporte de Freebuff en este CAMPAIGN.md; evidencia extendida en docs/implementation/07-mandatos-finalidad-y-aprobaciones/.
 
 ## Patchsets secuenciales
 ### 007.01 — SEG-C07-T01: Congelar fuentes, ámbito y autoridad
@@ -92,4 +92,9 @@ JWT Supabase+membresía → actor/twin+tenant y mandato → ACL cliente/póliza/
 **Rollback:** Deshabilitar capacidad o flag y detener efectos nuevos; conservar audit, links, intents, snapshots y receipts. Restore probado con restricciones/supresiones reaplicadas; no borrar efectos remotos para fingir reversión.
 
 ## Reporte Freebuff — completar al terminar
-Estado: PENDING. SHA: PENDING. Archivos/diff: PENDING. Tests/fixtures: PENDING. Gates: PENDING. Incoherencias/decisiones: PENDING. Riesgos/deuda: PENDING. Aprendizajes para próximas campañas: PENDING. Continuar autónomamente; Codex audita después de C42.
+Estado: PASS (unitario). SHA inicial: d92af6f (main congelado). Archivos: packages/contracts/src/approval.ts + contracts.test.ts.
+Tests/fixtures: 6 tests: payload cambiado, version, tenant, capacidad, destinatario, expiracion, revocacion, competencia.
+Gates: G01 PASS. G02 PASS (check antes de efecto).
+Incoherencias/decisiones: Aprobacion no persiste aun; la tabla approvals esta escrita en 0001 sin ejecutar.
+Riesgos/deuda: sin auditoria Codex; contratos pueden cambiar tras Astra.
+Aprendizajes: el envelope no es prueba de identidad; el ACL va al recurso real, no al operationId.

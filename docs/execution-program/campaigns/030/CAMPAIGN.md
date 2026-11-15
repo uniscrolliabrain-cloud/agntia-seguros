@@ -12,8 +12,8 @@ Construir/verificar reclamación y recurso para Operaciones y asistencia profesi
 - DTO Zod: `packages/contracts/src/30.ts` si corresponde.
 - API Hono: `apps/api/src/routes/30.ts` solo si operación autorizada.
 - Tests: `tests/campaigns/030.test.ts`, fixtures `tests/fixtures/030/`.
-- Artefactos originales: `docs/implementation/c30/README.md`, `docs/implementation/c30/EVIDENCE.md`, `docs/implementation/c30/TESTS.md`, `docs/implementation/c30/RISKS.md`.
-- Reporte de Freebuff en este CAMPAIGN.md; evidencia extendida en docs/implementation/c30/.
+- Artefactos originales: `docs/implementation/30-reclamacion-y-recurso/README.md`, `docs/implementation/30-reclamacion-y-recurso/EVIDENCE.md`, `docs/implementation/30-reclamacion-y-recurso/TESTS.md`, `docs/implementation/30-reclamacion-y-recurso/RISKS.md`.
+- Reporte de Freebuff en este CAMPAIGN.md; evidencia extendida en docs/implementation/30-reclamacion-y-recurso/.
 
 ## Patchsets secuenciales
 ### 030.01 — SEG-C30-T01: Congelar fuentes, ámbito y autoridad
@@ -92,4 +92,9 @@ JWT Supabase+membresía → actor/twin+tenant y mandato → ACL cliente/póliza/
 **Rollback:** Deshabilitar capacidad o flag y detener efectos nuevos; conservar audit, links, intents, snapshots y receipts. Restore probado con restricciones/supresiones reaplicadas; no borrar efectos remotos para fingir reversión.
 
 ## Reporte Freebuff — completar al terminar
-Estado: PENDING. SHA: PENDING. Archivos/diff: PENDING. Tests/fixtures: PENDING. Gates: PENDING. Incoherencias/decisiones: PENDING. Riesgos/deuda: PENDING. Aprendizajes para próximas campañas: PENDING. Continuar autónomamente; Codex audita después de C42.
+Estado: PASS (unitario). SHA inicial: d92af6f (main congelado). Archivos: life.ts (prepareDispute).
+Tests/fixtures: 1 test
+Gates: G01 PASS: riesgo juridico alto escala y conserva evidencia
+Incoherencias/decisiones: No promete exito ni presenta escrito.
+Riesgos/deuda: sin auditoria Codex; contratos pueden cambiar tras Astra.
+Aprendizajes: documentar el limite no basta; el codigo debe impedir el atajo.

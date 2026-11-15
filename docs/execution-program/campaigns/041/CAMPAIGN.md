@@ -12,8 +12,8 @@ Construir/verificar operaciones, ci, backup y release para Operaciones y asisten
 - DTO Zod: `packages/contracts/src/41.ts` si corresponde.
 - API Hono: `apps/api/src/routes/41.ts` solo si operación autorizada.
 - Tests: `tests/campaigns/041.test.ts`, fixtures `tests/fixtures/041/`.
-- Artefactos originales: `docs/implementation/c41/README.md`, `docs/implementation/c41/EVIDENCE.md`, `docs/implementation/c41/TESTS.md`, `docs/implementation/c41/RISKS.md`.
-- Reporte de Freebuff en este CAMPAIGN.md; evidencia extendida en docs/implementation/c41/.
+- Artefactos originales: `docs/implementation/41-operaciones-ci-backup-y-release/README.md`, `docs/implementation/41-operaciones-ci-backup-y-release/EVIDENCE.md`, `docs/implementation/41-operaciones-ci-backup-y-release/TESTS.md`, `docs/implementation/41-operaciones-ci-backup-y-release/RISKS.md`.
+- Reporte de Freebuff en este CAMPAIGN.md; evidencia extendida en docs/implementation/41-operaciones-ci-backup-y-release/.
 
 ## Patchsets secuenciales
 ### 041.01 — SEG-C41-T01: Congelar fuentes, ámbito y autoridad
@@ -92,4 +92,9 @@ JWT Supabase+membresía → actor/twin+tenant y mandato → ACL cliente/póliza/
 **Rollback:** Deshabilitar capacidad o flag y detener efectos nuevos; conservar audit, links, intents, snapshots y receipts. Restore probado con restricciones/supresiones reaplicadas; no borrar efectos remotos para fingir reversión.
 
 ## Reporte Freebuff — completar al terminar
-Estado: PENDING. SHA: PENDING. Archivos/diff: PENDING. Tests/fixtures: PENDING. Gates: PENDING. Incoherencias/decisiones: PENDING. Riesgos/deuda: PENDING. Aprendizajes para próximas campañas: PENDING. Continuar autónomamente; Codex audita después de C42.
+Estado: STUB (sin entorno/proveedor). SHA inicial: d92af6f (main congelado). Archivos: .github/workflows/ci.yml + docs/operations/CI.md.
+Tests/fixtures: 0 tests propios
+Gates: G01/G02 NOT_EXECUTED
+Incoherencias/decisiones: CI instala, typecheck y test; no despliega, no provisiona DB y no toca proveedores.
+Riesgos/deuda: stub honesto, no capacidad real; requiere proveedor/entorno para PASS.
+Aprendizajes: un stub que falla cerrado y lo dice es mejor que un mock que aparenta.

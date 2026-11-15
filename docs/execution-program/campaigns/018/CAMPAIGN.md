@@ -12,8 +12,8 @@ Construir/verificar comparación explicable para Operaciones y asistencia profes
 - DTO Zod: `packages/contracts/src/18.ts` si corresponde.
 - API Hono: `apps/api/src/routes/18.ts` solo si operación autorizada.
 - Tests: `tests/campaigns/018.test.ts`, fixtures `tests/fixtures/018/`.
-- Artefactos originales: `docs/implementation/c18/README.md`, `docs/implementation/c18/EVIDENCE.md`, `docs/implementation/c18/TESTS.md`, `docs/implementation/c18/RISKS.md`.
-- Reporte de Freebuff en este CAMPAIGN.md; evidencia extendida en docs/implementation/c18/.
+- Artefactos originales: `docs/implementation/18-comparacion-explicable/README.md`, `docs/implementation/18-comparacion-explicable/EVIDENCE.md`, `docs/implementation/18-comparacion-explicable/TESTS.md`, `docs/implementation/18-comparacion-explicable/RISKS.md`.
+- Reporte de Freebuff en este CAMPAIGN.md; evidencia extendida en docs/implementation/18-comparacion-explicable/.
 
 ## Patchsets secuenciales
 ### 018.01 — SEG-C18-T01: Congelar fuentes, ámbito y autoridad
@@ -92,4 +92,9 @@ JWT Supabase+membresía → actor/twin+tenant y mandato → ACL cliente/póliza/
 **Rollback:** Deshabilitar capacidad o flag y detener efectos nuevos; conservar audit, links, intents, snapshots y receipts. Restore probado con restricciones/supresiones reaplicadas; no borrar efectos remotos para fingir reversión.
 
 ## Reporte Freebuff — completar al terminar
-Estado: PENDING. SHA: PENDING. Archivos/diff: PENDING. Tests/fixtures: PENDING. Gates: PENDING. Incoherencias/decisiones: PENDING. Riesgos/deuda: PENDING. Aprendizajes para próximas campañas: PENDING. Continuar autónomamente; Codex audita después de C42.
+Estado: PASS (unitario). SHA inicial: d92af6f (main congelado). Archivos: market.ts (compareQuotes).
+Tests/fixtures: 2 tests
+Gates: G01 PASS: productos no equivalentes muestran diferencias y pendientes
+Incoherencias/decisiones: `suitability` es siempre not_assessed; no hay orden por precio.
+Riesgos/deuda: sin auditoria Codex; contratos pueden cambiar tras Astra.
+Aprendizajes: documentar el limite no basta; el codigo debe impedir el atajo.

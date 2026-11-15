@@ -12,8 +12,8 @@ Construir/verificar intake de siniestro para Operaciones y asistencia profesiona
 - DTO Zod: `packages/contracts/src/23.ts` si corresponde.
 - API Hono: `apps/api/src/routes/23.ts` solo si operación autorizada.
 - Tests: `tests/campaigns/023.test.ts`, fixtures `tests/fixtures/023/`.
-- Artefactos originales: `docs/implementation/c23/README.md`, `docs/implementation/c23/EVIDENCE.md`, `docs/implementation/c23/TESTS.md`, `docs/implementation/c23/RISKS.md`.
-- Reporte de Freebuff en este CAMPAIGN.md; evidencia extendida en docs/implementation/c23/.
+- Artefactos originales: `docs/implementation/23-intake-de-siniestro/README.md`, `docs/implementation/23-intake-de-siniestro/EVIDENCE.md`, `docs/implementation/23-intake-de-siniestro/TESTS.md`, `docs/implementation/23-intake-de-siniestro/RISKS.md`.
+- Reporte de Freebuff en este CAMPAIGN.md; evidencia extendida en docs/implementation/23-intake-de-siniestro/.
 
 ## Patchsets secuenciales
 ### 023.01 — SEG-C23-T01: Congelar fuentes, ámbito y autoridad
@@ -92,4 +92,9 @@ JWT Supabase+membresía → actor/twin+tenant y mandato → ACL cliente/póliza/
 **Rollback:** Deshabilitar capacidad o flag y detener efectos nuevos; conservar audit, links, intents, snapshots y receipts. Restore probado con restricciones/supresiones reaplicadas; no borrar efectos remotos para fingir reversión.
 
 ## Reporte Freebuff — completar al terminar
-Estado: PENDING. SHA: PENDING. Archivos/diff: PENDING. Tests/fixtures: PENDING. Gates: PENDING. Incoherencias/decisiones: PENDING. Riesgos/deuda: PENDING. Aprendizajes para próximas campañas: PENDING. Continuar autónomamente; Codex audita después de C42.
+Estado: PASS (unitario). SHA inicial: d92af6f (main congelado). Archivos: claims.ts (prepareClaimNotice).
+Tests/fixtures: 2 tests
+Gates: G01 PASS: fecha dudosa no activa plazo confirmado
+Incoherencias/decisiones: Aviso preparado no es aceptado ni presentado.
+Riesgos/deuda: sin auditoria Codex; contratos pueden cambiar tras Astra.
+Aprendizajes: documentar el limite no basta; el codigo debe impedir el atajo.

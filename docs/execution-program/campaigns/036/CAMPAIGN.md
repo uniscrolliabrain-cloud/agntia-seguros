@@ -12,8 +12,8 @@ Construir/verificar bridge de agente y eventos para Operaciones y asistencia pro
 - DTO Zod: `packages/contracts/src/36.ts` si corresponde.
 - API Hono: `apps/api/src/routes/36.ts` solo si operación autorizada.
 - Tests: `tests/campaigns/036.test.ts`, fixtures `tests/fixtures/036/`.
-- Artefactos originales: `docs/implementation/c36/README.md`, `docs/implementation/c36/EVIDENCE.md`, `docs/implementation/c36/TESTS.md`, `docs/implementation/c36/RISKS.md`.
-- Reporte de Freebuff en este CAMPAIGN.md; evidencia extendida en docs/implementation/c36/.
+- Artefactos originales: `docs/implementation/36-bridge-de-agente-y-eventos/README.md`, `docs/implementation/36-bridge-de-agente-y-eventos/EVIDENCE.md`, `docs/implementation/36-bridge-de-agente-y-eventos/TESTS.md`, `docs/implementation/36-bridge-de-agente-y-eventos/RISKS.md`.
+- Reporte de Freebuff en este CAMPAIGN.md; evidencia extendida en docs/implementation/36-bridge-de-agente-y-eventos/.
 
 ## Patchsets secuenciales
 ### 036.01 — SEG-C36-T01: Congelar fuentes, ámbito y autoridad
@@ -92,4 +92,9 @@ JWT Supabase+membresía → actor/twin+tenant y mandato → ACL cliente/póliza/
 **Rollback:** Deshabilitar capacidad o flag y detener efectos nuevos; conservar audit, links, intents, snapshots y receipts. Restore probado con restricciones/supresiones reaplicadas; no borrar efectos remotos para fingir reversión.
 
 ## Reporte Freebuff — completar al terminar
-Estado: PENDING. SHA: PENDING. Archivos/diff: PENDING. Tests/fixtures: PENDING. Gates: PENDING. Incoherencias/decisiones: PENDING. Riesgos/deuda: PENDING. Aprendizajes para próximas campañas: PENDING. Continuar autónomamente; Codex audita después de C42.
+Estado: STUB (sin entorno/proveedor). SHA inicial: d92af6f (main congelado). Archivos: packages/identity/src/index.ts (HostBridge, UnavailableHostBridge, assertEventAcknowledged).
+Tests/fixtures: 4 tests
+Gates: G01 PASS unitario (evento sin ACK no es entrega); G02 PASS unitario (identity null -> error)
+Incoherencias/decisiones: El bridge no escribe en el padre: no hay transporte ni credenciales, solo el contrato.
+Riesgos/deuda: stub honesto, no capacidad real; requiere proveedor/entorno para PASS.
+Aprendizajes: un stub que falla cerrado y lo dice es mejor que un mock que aparenta.

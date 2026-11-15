@@ -12,8 +12,8 @@ Construir/verificar twins y nomenclatura canónica para Operaciones y asistencia
 - DTO Zod: `packages/contracts/src/04.ts` si corresponde.
 - API Hono: `apps/api/src/routes/04.ts` solo si operación autorizada.
 - Tests: `tests/campaigns/004.test.ts`, fixtures `tests/fixtures/004/`.
-- Artefactos originales: `docs/implementation/c04/README.md`, `docs/implementation/c04/EVIDENCE.md`, `docs/implementation/c04/TESTS.md`, `docs/implementation/c04/RISKS.md`.
-- Reporte de Freebuff en este CAMPAIGN.md; evidencia extendida en docs/implementation/c04/.
+- Artefactos originales: `docs/implementation/04-twins-y-nomenclatura-canonica/README.md`, `docs/implementation/04-twins-y-nomenclatura-canonica/EVIDENCE.md`, `docs/implementation/04-twins-y-nomenclatura-canonica/TESTS.md`, `docs/implementation/04-twins-y-nomenclatura-canonica/RISKS.md`.
+- Reporte de Freebuff en este CAMPAIGN.md; evidencia extendida en docs/implementation/04-twins-y-nomenclatura-canonica/.
 
 ## Patchsets secuenciales
 ### 004.01 — SEG-C04-T01: Congelar fuentes, ámbito y autoridad
@@ -92,4 +92,9 @@ JWT Supabase+membresía → actor/twin+tenant y mandato → ACL cliente/póliza/
 **Rollback:** Deshabilitar capacidad o flag y detener efectos nuevos; conservar audit, links, intents, snapshots y receipts. Restore probado con restricciones/supresiones reaplicadas; no borrar efectos remotos para fingir reversión.
 
 ## Reporte Freebuff — completar al terminar
-Estado: PENDING. SHA: PENDING. Archivos/diff: PENDING. Tests/fixtures: PENDING. Gates: PENDING. Incoherencias/decisiones: PENDING. Riesgos/deuda: PENDING. Aprendizajes para próximas campañas: PENDING. Continuar autónomamente; Codex audita después de C42.
+Estado: STUB (sin entorno/proveedor). SHA inicial: d92af6f (main congelado). Archivos: packages/identity/src/index.ts (TwinBinding, assertTwinMandate, UnavailableHostBridge).
+Tests/fixtures: 4 tests
+Gates: G01 PASS unitario (mandato expirado/revocado/ajeno); G02 PASS unitario (bridge no resuelve -> fail closed)
+Incoherencias/decisiones: Sin catalogo canonico del padre no se puede validar la identidad real; el bridge devuelve HOST_BRIDGE_NOT_VERIFIED.
+Riesgos/deuda: stub honesto, no capacidad real; requiere proveedor/entorno para PASS.
+Aprendizajes: un stub que falla cerrado y lo dice es mejor que un mock que aparenta.
